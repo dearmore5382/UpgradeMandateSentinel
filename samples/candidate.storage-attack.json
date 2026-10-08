@@ -1,0 +1,1 @@
+{"schema":"upgrade-manifest-v1","project_ref":"VAULT-2026","artifact_sha256":"3333333333333333333333333333333333333333333333333333333333333333","functions":[{"selector":"0x11111111","signature":"deposit(uint256)","capability":"DEPOSIT"}],"storage":[{"slot":0,"label":"balance","type":"uint256"},{"slot":1,"label":"owner","type":"address"}]}

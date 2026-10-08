@@ -1,0 +1,1 @@
+{"schema":"upgrade-mandate-v1","project_ref":"VAULT-2026","mandate_ref":"GOV-42","clauses":[{"clause_id":"M-01","allowed_change":"Add a bounded fee rounding helper without changing recipients or authority."}],"forbidden_capabilities":["MINT","ARBITRARY_WITHDRAW","ADMIN_REPLACEMENT"]}

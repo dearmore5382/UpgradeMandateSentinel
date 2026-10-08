@@ -1,0 +1,247 @@
+{
+  "schema": "upgrade-mandate-live-evidence-v1",
+  "network": "GenLayer StudioNet",
+  "contract": "0x98D04e3495Ca8E3B4B43Bc8B006f9649c0425D7A",
+  "started": "2026-10-08T04:33:11.715Z",
+  "roles": {
+    "authority": "0x686269f09C21aac57f39662855FA51b9758698b2",
+    "builder": "0x48CCA889CF67A8420D82341e2fa9532Dc36Ba5c2",
+    "deployer_used_for_workflow": false
+  },
+  "transactions": [
+    {
+      "label": "register project VAULT-E2E-2026",
+      "function": "register_project",
+      "signer": "0x686269f09C21aac57f39662855FA51b9758698b2",
+      "hash": "0x46a70fdeadf3977b70f0c002d7e65da4147f52b0e53e7ec2674a37ffc1eb6537",
+      "explorer": "https://explorer-studio.genlayer.com/tx/0x46a70fdeadf3977b70f0c002d7e65da4147f52b0e53e7ec2674a37ffc1eb6537",
+      "result_name": null,
+      "execution_result": null,
+      "counts_before": {
+        "candidate_count": 0,
+        "evaluation_count": 0,
+        "mandate_count": 0,
+        "project_count": 0
+      },
+      "counts_after": {
+        "candidate_count": 0,
+        "evaluation_count": 0,
+        "mandate_count": 0,
+        "project_count": 1
+      }
+    },
+    {
+      "label": "wrong mandate publisher rejected",
+      "function": "publish_mandate",
+      "signer": "0x48CCA889CF67A8420D82341e2fa9532Dc36Ba5c2",
+      "hash": "0x0ba26683469bcd1f594146e7200996944d4dba14f6179234a57be24705590868",
+      "explorer": "https://explorer-studio.genlayer.com/tx/0x0ba26683469bcd1f594146e7200996944d4dba14f6179234a57be24705590868",
+      "result_name": null,
+      "execution_result": null,
+      "counts_before": {
+        "candidate_count": 0,
+        "evaluation_count": 0,
+        "mandate_count": 0,
+        "project_count": 1
+      },
+      "counts_after": {
+        "candidate_count": 0,
+        "evaluation_count": 0,
+        "mandate_count": 0,
+        "project_count": 1
+      }
+    },
+    {
+      "label": "publish mandate VAULT-E2E-2026",
+      "function": "publish_mandate",
+      "signer": "0x686269f09C21aac57f39662855FA51b9758698b2",
+      "hash": "0xc4ca7d5983f8da6e8258560974c8db2568cd7a9aa2fb16b4c32853c234038830",
+      "explorer": "https://explorer-studio.genlayer.com/tx/0xc4ca7d5983f8da6e8258560974c8db2568cd7a9aa2fb16b4c32853c234038830",
+      "result_name": null,
+      "execution_result": null,
+      "counts_before": {
+        "candidate_count": 0,
+        "evaluation_count": 0,
+        "mandate_count": 0,
+        "project_count": 1
+      },
+      "counts_after": {
+        "candidate_count": 0,
+        "evaluation_count": 0,
+        "mandate_count": 1,
+        "project_count": 1
+      }
+    },
+    {
+      "label": "wrong candidate publisher rejected",
+      "function": "submit_candidate",
+      "signer": "0x686269f09C21aac57f39662855FA51b9758698b2",
+      "hash": "0x20be0f76d563a67aae04516dd69b5f41f7e897e528cd2ea58cf39c741c3dae81",
+      "explorer": "https://explorer-studio.genlayer.com/tx/0x20be0f76d563a67aae04516dd69b5f41f7e897e528cd2ea58cf39c741c3dae81",
+      "result_name": null,
+      "execution_result": null,
+      "counts_before": {
+        "candidate_count": 0,
+        "evaluation_count": 0,
+        "mandate_count": 1,
+        "project_count": 1
+      },
+      "counts_after": {
+        "candidate_count": 0,
+        "evaluation_count": 0,
+        "mandate_count": 1,
+        "project_count": 1
+      }
+    },
+    {
+      "label": "submit safe candidate",
+      "function": "submit_candidate",
+      "signer": "0x48CCA889CF67A8420D82341e2fa9532Dc36Ba5c2",
+      "hash": "0x8d6f6aafc300f83d24be68297d1fa7d107c3f8957f8a0d6402ee490db3d84adf",
+      "explorer": "https://explorer-studio.genlayer.com/tx/0x8d6f6aafc300f83d24be68297d1fa7d107c3f8957f8a0d6402ee490db3d84adf",
+      "result_name": null,
+      "execution_result": null,
+      "counts_before": {
+        "candidate_count": 0,
+        "evaluation_count": 0,
+        "mandate_count": 1,
+        "project_count": 1
+      },
+      "counts_after": {
+        "candidate_count": 1,
+        "evaluation_count": 0,
+        "mandate_count": 1,
+        "project_count": 1
+      }
+    },
+    {
+      "label": "evaluate safe candidate",
+      "function": "evaluate_candidate",
+      "signer": "0x48CCA889CF67A8420D82341e2fa9532Dc36Ba5c2",
+      "hash": "0x59f48756c855b0fceeb29571753f921efc4173ba435ddd7420a9a6034fb164ec",
+      "explorer": "https://explorer-studio.genlayer.com/tx/0x59f48756c855b0fceeb29571753f921efc4173ba435ddd7420a9a6034fb164ec",
+      "result_name": null,
+      "execution_result": null,
+      "counts_before": {
+        "candidate_count": 1,
+        "evaluation_count": 0,
+        "mandate_count": 1,
+        "project_count": 1
+      },
+      "counts_after": {
+        "candidate_count": 1,
+        "evaluation_count": 1,
+        "mandate_count": 1,
+        "project_count": 1
+      }
+    },
+    {
+      "label": "evaluate safe candidate retry 1",
+      "function": "evaluate_candidate",
+      "signer": "0x48CCA889CF67A8420D82341e2fa9532Dc36Ba5c2",
+      "hash": "0x2442fc8da92692ca6144abd7ce38d16312ca5cbcee0b1900c5a4f1486d78ee9b",
+      "explorer": "https://explorer-studio.genlayer.com/tx/0x2442fc8da92692ca6144abd7ce38d16312ca5cbcee0b1900c5a4f1486d78ee9b",
+      "result_name": null,
+      "execution_result": null,
+      "counts_before": {
+        "candidate_count": 1,
+        "evaluation_count": 1,
+        "mandate_count": 1,
+        "project_count": 1
+      },
+      "counts_after": {
+        "candidate_count": 1,
+        "evaluation_count": 2,
+        "mandate_count": 1,
+        "project_count": 1
+      }
+    },
+    {
+      "label": "evaluate safe candidate retry 2",
+      "function": "evaluate_candidate",
+      "signer": "0x48CCA889CF67A8420D82341e2fa9532Dc36Ba5c2",
+      "hash": "0xbbb9c0d489901f526f57adac3b9e3a70afcba9a865c2e83202d15538107bdfc2",
+      "explorer": "https://explorer-studio.genlayer.com/tx/0xbbb9c0d489901f526f57adac3b9e3a70afcba9a865c2e83202d15538107bdfc2",
+      "result_name": null,
+      "execution_result": null,
+      "counts_before": {
+        "candidate_count": 1,
+        "evaluation_count": 2,
+        "mandate_count": 1,
+        "project_count": 1
+      },
+      "counts_after": {
+        "candidate_count": 1,
+        "evaluation_count": 3,
+        "mandate_count": 1,
+        "project_count": 1
+      }
+    }
+  ],
+  "checks": [
+    {
+      "name": "VAULT-E2E-2026 authority and builder bound",
+      "pass": true,
+      "details": {
+        "authority": "0x686269f09C21aac57f39662855FA51b9758698b2",
+        "baseline": "{\"artifact_sha256\":\"1111111111111111111111111111111111111111111111111111111111111111\",\"functions\":[{\"capability\":\"DEPOSIT\",\"selector\":\"0x11111111\",\"signature\":\"deposit(uint256)\"}],\"project_ref\":\"VAULT-E2E-2026\",\"schema\":\"upgrade-manifest-v1\",\"storage\":[{\"label\":\"owner\",\"slot\":0,\"type\":\"address\"},{\"label\":\"balance\",\"slot\":1,\"type\":\"uint256\"}]}",
+        "baseline_sha256": "0ebbcc72c8bf105dbfff723710249219952a980a4a0d9e99deffc184628fff2a",
+        "builder": "0x48CCA889CF67A8420D82341e2fa9532Dc36Ba5c2",
+        "project_id": 0,
+        "project_ref": "VAULT-E2E-2026"
+      }
+    },
+    {
+      "name": "Builder cannot publish governance mandate",
+      "pass": true,
+      "details": {
+        "candidate_count": 0,
+        "evaluation_count": 0,
+        "mandate_count": 0,
+        "project_count": 1
+      }
+    },
+    {
+      "name": "Authority cannot impersonate Builder",
+      "pass": true,
+      "details": {
+        "candidate_count": 0,
+        "evaluation_count": 0,
+        "mandate_count": 1,
+        "project_count": 1
+      }
+    },
+    {
+      "name": "Safe candidate ready for review",
+      "pass": true,
+      "details": {
+        "candidate_id": 0,
+        "candidate_sha256": "02391ef1da1cb146c13dd46d8aec4cdc30483a23f2302026c69b996362948ec2",
+        "hard_reason": "NONE",
+        "latest_evaluation": "NONE",
+        "mandate_id": 0,
+        "manifest": "{\"artifact_sha256\":\"2222222222222222222222222222222222222222222222222222222222222222\",\"functions\":[{\"capability\":\"DEPOSIT\",\"selector\":\"0x11111111\",\"signature\":\"deposit(uint256)\"},{\"capability\":\"FEE_ROUNDING\",\"selector\":\"0x22222222\",\"signature\":\"roundFee(uint256)\"}],\"project_ref\":\"VAULT-E2E-2026\",\"schema\":\"upgrade-manifest-v1\",\"storage\":[{\"label\":\"owner\",\"slot\":0,\"type\":\"address\"},{\"label\":\"balance\",\"slot\":1,\"type\":\"uint256\"}]}",
+        "parent_candidate": "ROOT",
+        "project_id": 0,
+        "publisher": "0x48CCA889CF67A8420D82341e2fa9532Dc36Ba5c2",
+        "state": "READY_REVIEW"
+      }
+    },
+    {
+      "name": "Happy path reaches WITHIN_MANDATE",
+      "pass": false,
+      "details": {
+        "candidate_id": 0,
+        "candidate_sha256": "02391ef1da1cb146c13dd46d8aec4cdc30483a23f2302026c69b996362948ec2",
+        "hard_reason": "NONE",
+        "latest_evaluation": "2",
+        "mandate_id": 0,
+        "manifest": "{\"artifact_sha256\":\"2222222222222222222222222222222222222222222222222222222222222222\",\"functions\":[{\"capability\":\"DEPOSIT\",\"selector\":\"0x11111111\",\"signature\":\"deposit(uint256)\"},{\"capability\":\"FEE_ROUNDING\",\"selector\":\"0x22222222\",\"signature\":\"roundFee(uint256)\"}],\"project_ref\":\"VAULT-E2E-2026\",\"schema\":\"upgrade-manifest-v1\",\"storage\":[{\"label\":\"owner\",\"slot\":0,\"type\":\"address\"},{\"label\":\"balance\",\"slot\":1,\"type\":\"uint256\"}]}",
+        "parent_candidate": "ROOT",
+        "project_id": 0,
+        "publisher": "0x48CCA889CF67A8420D82341e2fa9532Dc36Ba5c2",
+        "state": "REVIEW_REQUIRED"
+      }
+    }
+  ]
+}

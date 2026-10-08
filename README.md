@@ -27,6 +27,8 @@ Deploy `contracts/UpgradeMandateSentinel.py` on StudioNet and enter the deployme
 
 Submission-ready StudioNet v2 deployment: `0x9E2Eab87DA372ea3F7E752D146f50D3d323B1737`. The first v1 deployment is retained only as preliminary fail-closed evidence and must not be submitted.
 
+Live application: https://upgrade-mandate-sentinel.dearmorescheuer5382.workers.dev
+
 ## Evidence boundary
 
 This version authenticates who published each canonical manifest and stores its normalized bytes and SHA-256 on-chain. It does **not** claim that a submitted manifest is a complete or canonical Git commit tree. Integrators requiring repository-wide assurance must add a trusted commit-tree attestation before relying on the review receipt.

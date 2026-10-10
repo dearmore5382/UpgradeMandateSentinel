@@ -1,5 +1,7 @@
 # Specification
 
+Historical v2 specification. Current v3 requirements and verification gates are defined in verification/REMEDIATION_V3.md. The descriptions below are not claims about the v3 deployment.
+
 ## Proof obligation
 
 A candidate may become `WITHIN_MANDATE` only when:

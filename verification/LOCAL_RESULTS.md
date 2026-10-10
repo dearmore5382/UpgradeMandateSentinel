@@ -1,5 +1,7 @@
 # Local verification
 
+Historical v2 results. Current v3 results and limitations: REMEDIATION_V3.md.
+
 Date: 2026-10-08.
 
 `python -m pytest -q`: **9 passed** across production contract behavior and frontend guards.

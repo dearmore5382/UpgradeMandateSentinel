@@ -1,3 +1,4 @@
+# Historical v2 scenarios retained for reference; deploy/sync helpers support v3 tests.
 from pathlib import Path
 import importlib,json,sys
 from unittest.mock import patch

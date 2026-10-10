@@ -1,6 +1,6 @@
 # UpgradeMandate Sentinel
 
-UpgradeMandate Sentinel is a source-bound GenLayer review primitive for proxy upgrades. A Project Authority registers a canonical baseline manifest and governance mandate; a designated Builder submits immutable candidate nodes; deterministic layout checks hard-block unsafe storage changes; GenLayer consensus classifies remaining capability deltas against the mandate.
+UpgradeMandate Sentinel v3 reviews bounded standalone Solidity upgrade artifacts. An Authority registers a baseline locator at a full GitHub commit and a governance mandate; a designated Builder submits candidate locators. Validators fetch manifests and referenced source bytes, recompute their digests and inspect complete manifest/source correspondence. Only matching artifacts proceed to deterministic storage-prefix checks and source-informed mandate assessment. Imports, inheritance, assembly and delegatecall are unsupported and fail closed.
 
 The contract does not execute an upgrade. It produces an auditable review receipt for downstream timelocks or upgrade executors.
 
@@ -25,7 +25,7 @@ npm run dev
 
 Deploy `contracts/UpgradeMandateSentinel.py` on StudioNet and enter the deployment address in the cockpit. Never commit private keys or API tokens.
 
-Submission-ready StudioNet v2 deployment: `0x9E2Eab87DA372ea3F7E752D146f50D3d323B1737`. The first v1 deployment is retained only as preliminary fail-closed evidence and must not be submitted.
+The StudioNet v2 deployment `0x9E2Eab87DA372ea3F7E752D146f50D3d323B1737` and its live evidence are historical. They do not verify artifact correspondence and must not be used to claim completion of v3 remediation. Current source is v3 and requires a replacement deployment. See verification/REMEDIATION_V3.md for implementation, verification status and scope.
 
 Live application: https://upgrade-mandate-sentinel.dearmorescheuer5382.workers.dev
 

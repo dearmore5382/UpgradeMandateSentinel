@@ -1,5 +1,7 @@
 # Architecture difference statement
 
+Historical v2 description. v3 adds validator retrieval and correspondence review for source artifacts; see verification/REMEDIATION_V3.md.
+
 This project is not a renamed AgentSpend Firewall or a repeated lock/evaluate/settle workflow.
 
 | Dimension | UpgradeMandate Sentinel |

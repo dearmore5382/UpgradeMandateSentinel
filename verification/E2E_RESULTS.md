@@ -1,5 +1,7 @@
 # StudioNet E2E verification
 
+Historical v2 evidence. This does not establish manifest/source correspondence. v3 replacement deployment and live verification are pending; see REMEDIATION_V3.md.
+
 Date: 2026-10-08. Contract: [`0x9E2E...B1737`](https://explorer-studio.genlayer.com/address/0x9E2Eab87DA372ea3F7E752D146f50D3d323B1737). Identity readback: `UpgradeMandateSentinel`, version `2`, schema `append-only-upgrade-review-v2`.
 
 Two auxiliary wallets executed the workflow. The deployment wallet was not used for any role action. Full before/after counters, signers and post-state are preserved in `LIVE_RUN.json`.

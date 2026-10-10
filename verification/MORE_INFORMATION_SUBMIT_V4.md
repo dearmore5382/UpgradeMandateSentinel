@@ -1,5 +1,7 @@
 # Steward remediation mapping
 
+Single detailed submission evidence: [Consolidated E2E report with every transaction and Explorer link](E2E_FULL_REPORT_V4.md).
+
 Concern: manifest publisher authentication did not prove correspondence to actual upgrade artifacts.
 
 1. Validators fetch full-commit-pinned manifests and referenced source and recompute both digests.

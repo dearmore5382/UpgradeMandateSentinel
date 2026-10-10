@@ -1,5 +1,7 @@
 # v4 live lifecycle evidence
 
+For submission, use the [single detailed E2E report with all transaction links](E2E_FULL_REPORT_V4.md).
+
 Contract: `0x2eCb42621DC10023EE0fd1051E7eb119D6bE2B5B` (StudioNet).
 Deployed source matched repository bytes exactly; SHA-256 `f471a6a4f26ef3c25667a5996b8ea50b1ef8a896e61c3dc37951976e5c961689`.
 

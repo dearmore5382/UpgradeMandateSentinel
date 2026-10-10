@@ -1,6 +1,8 @@
 node_modules/
 dist/
 artifacts/
+!samples/artifacts/
+!samples/artifacts/*
 __pycache__/
 .pytest_cache/
 *.pyc

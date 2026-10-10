@@ -1,0 +1,1 @@
+{"schema":"upgrade-manifest-v2","project_ref":"VAULT-2026","source_path":"samples/artifacts/Baseline.sol","source_sha256":"7ade3248ec58091524f58a5fddc27958feb419972b92fcaaccef5571799befc7","functions":[{"selector":"0xb6b55f25","signature":"deposit(uint256)","capability":"DEPOSIT"}],"storage":[{"slot":0,"label":"balance","type":"uint256"}]}

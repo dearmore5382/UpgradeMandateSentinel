@@ -1,5 +1,7 @@
 # Artifact correspondence remediation
 
+Superseded by REMEDIATION_V4.md after v3 live correspondence returned UNCLEAR/NO_MAJORITY. The implementation and local results below describe v3 history.
+
 Status: local implementation and fixtures prepared; replacement deployment and live consensus verification pending. The previous v2 deployment and 18-check lifecycle establish publisher authentication only and do not prove artifact correspondence.
 
 Steward concern: manifests are signed by publishers but are not established as descriptions of referenced upgrade artifacts.

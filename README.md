@@ -1,5 +1,7 @@
 # UpgradeMandate Sentinel
 
+Current source is v4. The v3 live attempt did not establish a passing happy path. See verification/REMEDIATION_V4.md for the deterministic structural verification correction and current release blockers.
+
 UpgradeMandate Sentinel v3 reviews bounded standalone Solidity upgrade artifacts. An Authority registers a baseline locator at a full GitHub commit and a governance mandate; a designated Builder submits candidate locators. Validators fetch manifests and referenced source bytes, recompute their digests and inspect complete manifest/source correspondence. Only matching artifacts proceed to deterministic storage-prefix checks and source-informed mandate assessment. Imports, inheritance, assembly and delegatecall are unsupported and fail closed.
 
 The contract does not execute an upgrade. It produces an auditable review receipt for downstream timelocks or upgrade executors.

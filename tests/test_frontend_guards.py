@@ -7,7 +7,7 @@ def test_finality_and_authoritative_append_only_readback():
     assert "receipt.resultName" not in SOURCE
     assert "typeof r==='string'?JSON.parse(r):r" in SOURCE
 def test_contract_identity_and_explorer_are_visible():
-    assert 'UpgradeMandateSentinel v3 is required' in SOURCE
+    assert 'UpgradeMandateSentinel v4 is required' in SOURCE
     assert 'explorer-studio.genlayer.com/tx/' in SOURCE
     assert 'ACTIVE CONTRACT' in SOURCE
 def test_ui_is_a_distinct_three_pane_review_cockpit():

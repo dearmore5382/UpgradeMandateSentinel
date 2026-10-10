@@ -1,0 +1,143 @@
+{
+  "contract": "0x6B8593e8c62E04B1dd9b71dE5bfB84B54D59170b",
+  "commit": "4f91e189810e6e5f266152661de25fba00cb26a2",
+  "roles": {
+    "authority": "0x686269f09C21aac57f39662855FA51b9758698b2",
+    "builder": "0x48CCA889CF67A8420D82341e2fa9532Dc36Ba5c2"
+  },
+  "transactions": [
+    {
+      "label": "baseline",
+      "hash": "0x33ab48164de1a91af368fd3b06df2227543326f3199ed98404e323fc273c5ea2",
+      "signer": "0x686269f09C21aac57f39662855FA51b9758698b2",
+      "before": {
+        "candidate_count": 0,
+        "evaluation_count": 0,
+        "mandate_count": 0,
+        "project_count": 0
+      },
+      "status": "FINALIZED",
+      "after": {
+        "candidate_count": 0,
+        "evaluation_count": 0,
+        "mandate_count": 0,
+        "project_count": 1
+      }
+    },
+    {
+      "label": "mandate",
+      "hash": "0x3b36ca11709261972aadeef9474f41874870207ecb8ab9f1bfae3dfa3b45f8ea",
+      "signer": "0x686269f09C21aac57f39662855FA51b9758698b2",
+      "before": {
+        "candidate_count": 0,
+        "evaluation_count": 0,
+        "mandate_count": 0,
+        "project_count": 1
+      },
+      "status": "FINALIZED",
+      "after": {
+        "candidate_count": 0,
+        "evaluation_count": 0,
+        "mandate_count": 1,
+        "project_count": 1
+      }
+    },
+    {
+      "label": "submit safe",
+      "hash": "0xa5963bc91efe78245105fd74227d8e40f515ca6ea0f836682a73e55b86fd7849",
+      "signer": "0x48CCA889CF67A8420D82341e2fa9532Dc36Ba5c2",
+      "before": {
+        "candidate_count": 0,
+        "evaluation_count": 0,
+        "mandate_count": 1,
+        "project_count": 1
+      },
+      "status": "FINALIZED",
+      "after": {
+        "candidate_count": 1,
+        "evaluation_count": 0,
+        "mandate_count": 1,
+        "project_count": 1
+      }
+    },
+    {
+      "label": "evaluate safe",
+      "hash": "0x5f2e5cf2e15cf874336c03efff46631ee43e7c48f137f4e58ad78b326821e5d2",
+      "signer": "0x48CCA889CF67A8420D82341e2fa9532Dc36Ba5c2",
+      "before": {
+        "candidate_count": 1,
+        "evaluation_count": 0,
+        "mandate_count": 1,
+        "project_count": 1
+      },
+      "status": "SUBMITTED"
+    }
+  ],
+  "checks": [
+    {
+      "name": "v3 identity",
+      "pass": true,
+      "state": {
+        "name": "UpgradeMandateSentinel",
+        "schema": "artifact-bound-upgrade-review-v3",
+        "version": 3
+      }
+    },
+    {
+      "name": "public manifest baseline",
+      "pass": true,
+      "state": {
+        "status": 200
+      }
+    },
+    {
+      "name": "public source baseline",
+      "pass": true,
+      "state": {
+        "status": 200
+      }
+    },
+    {
+      "name": "public manifest safe",
+      "pass": true,
+      "state": {
+        "status": 200
+      }
+    },
+    {
+      "name": "public source safe",
+      "pass": true,
+      "state": {
+        "status": 200
+      }
+    },
+    {
+      "name": "public manifest hidden-mint",
+      "pass": true,
+      "state": {
+        "status": 200
+      }
+    },
+    {
+      "name": "public source hidden-mint",
+      "pass": true,
+      "state": {
+        "status": 200
+      }
+    },
+    {
+      "name": "public manifest wrong-storage",
+      "pass": true,
+      "state": {
+        "status": 200
+      }
+    },
+    {
+      "name": "public source wrong-storage",
+      "pass": true,
+      "state": {
+        "status": 200
+      }
+    }
+  ]
+}

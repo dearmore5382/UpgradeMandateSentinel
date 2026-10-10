@@ -50,10 +50,20 @@ def test_observation_fetches_exact_source_and_uses_correspondence_model(fixture,
     _,c,_,_=deploy();mod=c._instance.register_project.__globals__;folder=Path(__file__).resolve().parents[1]/'samples'/'artifacts';raw=(folder/(fixture+'.json')).read_bytes();value=json.loads(raw);source=(folder/value['source_path'].split('/')[-1]).read_bytes();seen=[]
     def fetch(url,limit):seen.append(url);return raw if url.endswith('.json') else source
     prompts=[]
-    def prompt(text):prompts.append(text);return model_answer
+    def prompt(text,**kwargs):prompts.append(text);return {'correspondence':model_answer}
     fake=SimpleNamespace(nondet=SimpleNamespace(exec_prompt=prompt))
     with patch.dict(mod,{'_fetch':fetch,'gl':fake}):result=mod['_artifact_observe']('owner','repo',SHA,'samples/artifacts/'+fixture+'.json',hashlib.sha256(raw).hexdigest(),'VAULT-2026')
-    assert result['status']==expected;assert result['source_sha256']==hashlib.sha256(source).hexdigest();assert len(seen)==2;assert source.decode() in prompts[0]
+    assert result['status']==('UNSUPPORTED_SOURCE' if fixture=='wrong-storage' else expected);assert result['source_sha256']==hashlib.sha256(source).hexdigest();assert len(seen)==2
+    if fixture=='safe':assert source.decode() in prompts[0]
+    else:assert prompts==[], 'Structural omission/storage failure must be detected without AI'
+
+def test_actual_selector_and_complete_inventory():
+    from pathlib import Path
+    _,c,_,_=deploy();mod=c._instance.register_project.__globals__;folder=Path(__file__).resolve().parents[1]/'samples'/'artifacts'
+    parsed=mod['_source_structure']((folder/'Safe.sol').read_text())
+    assert parsed['functions']==[{'selector':'0x1b55c7e5','signature':'roundFee(uint256)'},{'selector':'0xb6b55f25','signature':'deposit(uint256)'}]
+    assert len(mod['_source_structure']((folder/'HiddenMint.sol').read_text())['functions'])==3
+    with pytest.raises(ValueError):mod['_source_structure']('pragma solidity ^0.8.24; contract X { import "evil.sol"; }')
 
 def test_correct_manifest_digest_wrong_source_bytes_never_calls_model():
     from pathlib import Path

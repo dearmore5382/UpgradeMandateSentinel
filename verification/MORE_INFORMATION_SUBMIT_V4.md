@@ -5,7 +5,7 @@ Concern: manifest publisher authentication did not prove correspondence to actua
 1. Validators fetch full-commit-pinned manifests and referenced source and recompute both digests.
 2. An exhaustive restricted-source parser compares actual selectors/signatures and ordered storage with the complete manifest inventory. Hidden functions and unsupported syntax fail before AI review.
 3. Semantic review receives fetched source bodies; uncertainty produces REVIEW_REQUIRED.
-4. E2E_V4.md and LIVE_RUN_V4_EXACT_MANDATE.json show finalized positive/negative controls. LIVE_RUN_V4.json preserves the ambiguous-mandate failure.
+4. E2E_V4.md and LIVE_RUN_V4_EXACT_MANDATE.json show finalized positive/negative controls. LIVE_RUN_V4.json preserves the ambiguous-mandate failure. ADVERSARIAL_V4.md and LIVE_V4_ADVERSARIAL.json add 13 finalized conflict/authorization transactions: role impersonation, replay, cross-project mandate/parent and repository substitution are denied without mutation; explicit forbiddance wins over an allowing clause.
 5. Scope excludes deployed-bytecode attestation and proxy execution. Production signed-browser verification remains pending.
 
 ## Response under 1000 characters

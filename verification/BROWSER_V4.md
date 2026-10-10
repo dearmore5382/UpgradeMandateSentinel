@@ -9,4 +9,4 @@ Observed through rendered accessibility state:
 - Connect wallet displays `Error: Install an injected wallet.` No injected wallet is available in the connected browser. No browser-signed transaction was submitted.
 
 Confirmed: rendered happy/hidden-mint readback parity with finalized SDK lifecycle evidence.
-Blocked: full two-wallet browser signing journey, including pending-to-finalized transitions and account switching. Requires an accessible browser with the auxiliary wallets connected. Do not substitute mock provider tests or SDK transactions for this proof. Other live conflict/authorization checks listed in E2E_V4.md remain unverified.
+Blocked: full two-wallet browser signing journey, including pending-to-finalized transitions and account switching. Requires an accessible browser with the auxiliary wallets connected. Do not substitute mock provider tests or SDK transactions for this proof. Subsequent SDK-signed conflict/authorization controls passed; see ADVERSARIAL_V4.md. They do not remove the browser-signing blocker.

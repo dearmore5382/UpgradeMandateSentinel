@@ -1,4 +1,4 @@
-import React,{useState} from 'react';
+import React,{useState,useEffect} from 'react';
 import {createClient} from 'genlayer-js';
 import {studionet} from 'genlayer-js/chains';
 import {Hash,TransactionStatus} from 'genlayer-js/types';
@@ -6,18 +6,20 @@ type RecordData=Record<string,unknown>;
 const initialLocator=JSON.stringify({owner:'dearmore5382',repository:'UpgradeMandateSentinel',commit:'4f91e189810e6e5f266152661de25fba00cb26a2',manifest_path:'samples/artifacts/baseline.json',manifest_sha256:'384334b3b901605f8b7ab36b6205216254c25f477d9b5b56688d219d65a45a1d'},null,2);
 function locator(raw:string){const x=JSON.parse(raw);return [x.owner,x.repository,x.commit,x.manifest_path,x.manifest_sha256] as string[];}
 export default function ArtifactApp(){
- const[address,setAddress]=useState(localStorage.getItem('ums-v3-contract')||import.meta.env.VITE_CONTRACT_ADDRESS||'');
+ const[address,setAddress]=useState(localStorage.getItem('ums-v4-contract')||import.meta.env.VITE_CONTRACT_ADDRESS||'');
  const[wallet,setWallet]=useState(''),[message,setMessage]=useState('Select a version 4 deployment and connect a role wallet.'),[busy,setBusy]=useState(false);
  const[reference,setReference]=useState('VAULT-2026'),[builder,setBuilder]=useState(''),[baseline,setBaseline]=useState(initialLocator),[candidate,setCandidate]=useState(initialLocator.replace('baseline.json','safe.json').replace('384334b3b901605f8b7ab36b6205216254c25f477d9b5b56688d219d65a45a1d','13b48f52dab9db95a95659f875191f3acbdc7abbf0416b88db0b4d6f470ee20d'));
  const[project,setProject]=useState('0'),[mandateId,setMandateId]=useState('0'),[candidateId,setCandidateId]=useState('0'),[parent,setParent]=useState('ROOT');
- const[mandate,setMandate]=useState(JSON.stringify({schema:'upgrade-mandate-v1',project_ref:'VAULT-2026',mandate_ref:'GOV-42',clauses:[{clause_id:'M-01',allowed_change:'Add roundFee(uint256) as a pure fee rounding helper. No minting, withdrawal or authority change.'}],forbidden_capabilities:['MINT','ARBITRARY_WITHDRAW','ADMIN_REPLACEMENT']},null,2));
- const[data,setData]=useState<RecordData|null>(null),[journal,setJournal]=useState<{label:string,hash:string}[]>([]);
+ const[mandate,setMandate]=useState(JSON.stringify({schema:'upgrade-mandate-v1',project_ref:'VAULT-2026',mandate_ref:'GOV-V4-EXACT',clauses:[{clause_id:'M-01',allowed_change:'Authorize selector 0xb6b55f25, signature deposit(uint256), capability DEPOSIT, retaining exactly balance += amount from the baseline. Authorize addition of selector 0x1b55c7e5, signature roundFee(uint256), capability FEE_ROUNDING, as an external pure function returning amount / 100. No other new capability or behavior change is permitted.'}],forbidden_capabilities:['MINT','ARBITRARY_WITHDRAW','ADMIN_REPLACEMENT']},null,2));
+ const[data,setData]=useState<RecordData|null>(null),[journal,setJournal]=useState<{label:string,hash:string}[]>(()=>{try{return JSON.parse(localStorage.getItem('ums-v4-journal')||'[]');}catch{return [];}});
+ useEffect(()=>{localStorage.setItem('ums-v4-contract',address);},[address]);
+ useEffect(()=>{localStorage.setItem('ums-v4-journal',JSON.stringify(journal));},[journal]);
  const reader=createClient({chain:studionet});
  async function read(method:string,args:(number|string)[]=[]){if(!/^0x[0-9a-fA-F]{40}$/.test(address))throw Error('Enter a valid contract address.');const r=await reader.readContract({address:address as `0x${string}`,functionName:method,args});return (typeof r==='string'?JSON.parse(r):r) as RecordData;}
  async function connect(){try{if(!window.ethereum)throw Error('Install an injected wallet.');const accounts=await window.ethereum.request({method:'eth_requestAccounts'});setWallet(accounts[0]);setMessage('Wallet connected. Authority registers the baseline; the designated Builder submits candidates.');}catch(e){setMessage(String(e));}}
  async function load(id=candidateId){const r=await read('get_candidate',[Number(id)]);if(r.error)throw Error(String(r.error));const checks=await read('get_artifact_checks',[Number(id)]);setData({...r,artifact_checks:checks});return r;}
  async function write(label:string,method:string,args:(number|string)[]=[]){setBusy(true);try{
-  if(!wallet||!window.ethereum)throw Error('Connect the assigned role wallet.');const identity=await read('get_contract_version');if(identity.version!==4||identity.schema!=='artifact-bound-upgrade-review-v4')throw Error('UpgradeMandateSentinel v4 is required.');
+  if(!wallet||!window.ethereum)throw Error('Connect the assigned role wallet.');const selected=await window.ethereum.request({method:'eth_accounts'});if(String(selected[0]).toLowerCase()!==wallet.toLowerCase())throw Error('Wallet account changed. Connect the selected account before signing.');const identity=await read('get_contract_version');if(identity.version!==4||identity.schema!=='artifact-bound-upgrade-review-v4')throw Error('UpgradeMandateSentinel v4 is required.');
   const before=await read('get_counts');const counter=({register_project:'project_count',publish_mandate:'mandate_count',submit_candidate:'candidate_count',evaluate_candidate:'evaluation_count'} as Record<string,string>)[method];const id=Number(before[counter]);
   const client=createClient({chain:studionet,provider:window.ethereum,account:wallet as `0x${string}`});await client.connect('studionet');const response:unknown=await client.writeContract({address:address as `0x${string}`,functionName:method,args,value:0n});const hash=typeof response==='string'?response:(response as {txId?:string}).txId;if(!hash)throw Error('Wallet returned no transaction hash.');
   setJournal(x=>[{label,hash},...x]);setMessage('Transaction submitted. Waiting for finality and contract state.');await reader.waitForTransactionReceipt({hash:hash as Hash,status:TransactionStatus.FINALIZED,interval:5000,retries:240});

@@ -1,0 +1,184 @@
+{
+  "contract": "0x2eCb42621DC10023EE0fd1051E7eb119D6bE2B5B",
+  "commit": "4f91e189810e6e5f266152661de25fba00cb26a2",
+  "roles": {
+    "authority": "0x686269f09C21aac57f39662855FA51b9758698b2",
+    "builder": "0x48CCA889CF67A8420D82341e2fa9532Dc36Ba5c2"
+  },
+  "transactions": [
+    {
+      "label": "baseline",
+      "hash": "0x9b6357297755086cc983c8b5295f0b8d6c8ce35f3618bd7e8583c3c84e26023d",
+      "signer": "0x686269f09C21aac57f39662855FA51b9758698b2",
+      "before": {
+        "candidate_count": 0,
+        "evaluation_count": 0,
+        "mandate_count": 0,
+        "project_count": 0
+      },
+      "status": "FINALIZED",
+      "after": {
+        "candidate_count": 0,
+        "evaluation_count": 0,
+        "mandate_count": 0,
+        "project_count": 1
+      }
+    },
+    {
+      "label": "mandate",
+      "hash": "0x95d0ae13dbfbc0fb5a8a80a36abbe125991da68eea63ad59c77bd6eab83d6f8c",
+      "signer": "0x686269f09C21aac57f39662855FA51b9758698b2",
+      "before": {
+        "candidate_count": 0,
+        "evaluation_count": 0,
+        "mandate_count": 0,
+        "project_count": 1
+      },
+      "status": "FINALIZED",
+      "after": {
+        "candidate_count": 0,
+        "evaluation_count": 0,
+        "mandate_count": 1,
+        "project_count": 1
+      }
+    },
+    {
+      "label": "submit safe",
+      "hash": "0x909f06e397b82ed7514c0ae9607c00397e4da2e352d94e467f77800fe5a1c6c4",
+      "signer": "0x48CCA889CF67A8420D82341e2fa9532Dc36Ba5c2",
+      "before": {
+        "candidate_count": 0,
+        "evaluation_count": 0,
+        "mandate_count": 1,
+        "project_count": 1
+      },
+      "status": "FINALIZED",
+      "after": {
+        "candidate_count": 1,
+        "evaluation_count": 0,
+        "mandate_count": 1,
+        "project_count": 1
+      }
+    },
+    {
+      "label": "evaluate safe",
+      "hash": "0x5344150b8331610e855df94b9ab2a2798a15493c5ad4e19f5a235d904610bfaa",
+      "signer": "0x48CCA889CF67A8420D82341e2fa9532Dc36Ba5c2",
+      "before": {
+        "candidate_count": 1,
+        "evaluation_count": 0,
+        "mandate_count": 1,
+        "project_count": 1
+      },
+      "status": "FINALIZED",
+      "after": {
+        "candidate_count": 1,
+        "evaluation_count": 1,
+        "mandate_count": 1,
+        "project_count": 2
+      }
+    }
+  ],
+  "checks": [
+    {
+      "name": "v4 identity",
+      "pass": true,
+      "state": {
+        "name": "UpgradeMandateSentinel",
+        "schema": "artifact-bound-upgrade-review-v4",
+        "version": 4
+      }
+    },
+    {
+      "name": "public manifest baseline",
+      "pass": true,
+      "state": {
+        "status": 200
+      }
+    },
+    {
+      "name": "public source baseline",
+      "pass": true,
+      "state": {
+        "status": 200
+      }
+    },
+    {
+      "name": "public manifest safe",
+      "pass": true,
+      "state": {
+        "status": 200
+      }
+    },
+    {
+      "name": "public source safe",
+      "pass": true,
+      "state": {
+        "status": 200
+      }
+    },
+    {
+      "name": "public manifest hidden-mint",
+      "pass": true,
+      "state": {
+        "status": 200
+      }
+    },
+    {
+      "name": "public source hidden-mint",
+      "pass": true,
+      "state": {
+        "status": 200
+      }
+    },
+    {
+      "name": "public manifest wrong-storage",
+      "pass": true,
+      "state": {
+        "status": 200
+      }
+    },
+    {
+      "name": "public source wrong-storage",
+      "pass": true,
+      "state": {
+        "status": 200
+      }
+    },
+    {
+      "name": "safe expected outcome",
+      "pass": false,
+      "state": {
+        "state": {
+          "candidate_id": 0,
+          "candidate_sha256": "13b48f52dab9db95a95659f875191f3acbdc7abbf0416b88db0b4d6f470ee20d",
+          "hard_reason": "NONE",
+          "latest_evaluation": "0",
+          "mandate_id": 0,
+          "manifest": "{\"functions\":[{\"capability\":\"FEE_ROUNDING\",\"selector\":\"0x1b55c7e5\",\"signature\":\"roundFee(uint256)\"},{\"capability\":\"DEPOSIT\",\"selector\":\"0xb6b55f25\",\"signature\":\"deposit(uint256)\"}],\"project_ref\":\"VAULT-2026\",\"schema\":\"upgrade-manifest-v2\",\"source_path\":\"samples/artifacts/Safe.sol\",\"source_sha256\":\"ff4c53b57655cf27799d31249b9b59012cbe15ff6d32c9ce9e5b695dbbf113e7\",\"storage\":[{\"label\":\"balance\",\"slot\":0,\"type\":\"uint256\"}]}",
+          "parent_candidate": "ROOT",
+          "project_id": 0,
+          "publisher": "0x48CCA889CF67A8420D82341e2fa9532Dc36Ba5c2",
+          "source": "{\"commit\":\"4f91e189810e6e5f266152661de25fba00cb26a2\",\"manifest_path\":\"samples/artifacts/safe.json\",\"manifest_sha256\":\"13b48f52dab9db95a95659f875191f3acbdc7abbf0416b88db0b4d6f470ee20d\",\"owner\":\"dearmore5382\",\"repository\":\"UpgradeMandateSentinel\"}",
+          "state": "REVIEW_REQUIRED"
+        },
+        "checks": {
+          "baseline": {
+            "manifest": "{\"functions\":[{\"capability\":\"DEPOSIT\",\"selector\":\"0xb6b55f25\",\"signature\":\"deposit(uint256)\"}],\"project_ref\":\"VAULT-2026\",\"schema\":\"upgrade-manifest-v2\",\"source_path\":\"samples/artifacts/Baseline.sol\",\"source_sha256\":\"7ade3248ec58091524f58a5fddc27958feb419972b92fcaaccef5571799befc7\",\"storage\":[{\"label\":\"balance\",\"slot\":0,\"type\":\"uint256\"}]}",
+            "manifest_sha256": "384334b3b901605f8b7ab36b6205216254c25f477d9b5b56688d219d65a45a1d",
+            "source_sha256": "7ade3248ec58091524f58a5fddc27958feb419972b92fcaaccef5571799befc7",
+            "source_text": "pragma solidity ^0.8.24;\ncontract Vault {\n    uint256 internal balance;\n    function deposit(uint256 amount) external { balance += amount; }\n}\n",
+            "status": "MATCH"
+          },
+          "candidate": {
+            "manifest": "{\"functions\":[{\"capability\":\"FEE_ROUNDING\",\"selector\":\"0x1b55c7e5\",\"signature\":\"roundFee(uint256)\"},{\"capability\":\"DEPOSIT\",\"selector\":\"0xb6b55f25\",\"signature\":\"deposit(uint256)\"}],\"project_ref\":\"VAULT-2026\",\"schema\":\"upgrade-manifest-v2\",\"source_path\":\"samples/artifacts/Safe.sol\",\"source_sha256\":\"ff4c53b57655cf27799d31249b9b59012cbe15ff6d32c9ce9e5b695dbbf113e7\",\"storage\":[{\"label\":\"balance\",\"slot\":0,\"type\":\"uint256\"}]}",
+            "manifest_sha256": "13b48f52dab9db95a95659f875191f3acbdc7abbf0416b88db0b4d6f470ee20d",
+            "source_sha256": "ff4c53b57655cf27799d31249b9b59012cbe15ff6d32c9ce9e5b695dbbf113e7",
+            "source_text": "pragma solidity ^0.8.24;\ncontract Vault {\n    uint256 internal balance;\n    function deposit(uint256 amount) external { balance += amount; }\n    function roundFee(uint256 amount) external pure returns (uint256) { return amount / 100; }\n}\n",
+            "status": "MATCH"
+          }
+        }
+      }
+    }
+  ]
+}

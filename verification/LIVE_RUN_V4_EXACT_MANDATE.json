@@ -1,0 +1,401 @@
+{
+  "contract": "0x2eCb42621DC10023EE0fd1051E7eb119D6bE2B5B",
+  "commit": "4f91e189810e6e5f266152661de25fba00cb26a2",
+  "roles": {
+    "authority": "0x686269f09C21aac57f39662855FA51b9758698b2",
+    "builder": "0x48CCA889CF67A8420D82341e2fa9532Dc36Ba5c2"
+  },
+  "transactions": [
+    {
+      "label": "baseline",
+      "hash": "0x13f298c109aa721a7d498cf981f877496363dec78963ba8fdb15b880d5b10157",
+      "signer": "0x686269f09C21aac57f39662855FA51b9758698b2",
+      "before": {
+        "candidate_count": 1,
+        "evaluation_count": 1,
+        "mandate_count": 1,
+        "project_count": 1
+      },
+      "status": "FINALIZED",
+      "after": {
+        "candidate_count": 1,
+        "evaluation_count": 1,
+        "mandate_count": 1,
+        "project_count": 2
+      }
+    },
+    {
+      "label": "mandate",
+      "hash": "0x40e933396e78040be690e73a5166e3761cc2cffb1f80a4297e57b82a77945b5b",
+      "signer": "0x686269f09C21aac57f39662855FA51b9758698b2",
+      "before": {
+        "candidate_count": 1,
+        "evaluation_count": 1,
+        "mandate_count": 1,
+        "project_count": 2
+      },
+      "status": "FINALIZED",
+      "after": {
+        "candidate_count": 1,
+        "evaluation_count": 1,
+        "mandate_count": 2,
+        "project_count": 2
+      }
+    },
+    {
+      "label": "submit safe",
+      "hash": "0xeac02b44f4149a7893ca8c6f9e6796924d1798f2fd859ddeb23f64bca15f5296",
+      "signer": "0x48CCA889CF67A8420D82341e2fa9532Dc36Ba5c2",
+      "before": {
+        "candidate_count": 1,
+        "evaluation_count": 1,
+        "mandate_count": 2,
+        "project_count": 2
+      },
+      "status": "FINALIZED",
+      "after": {
+        "candidate_count": 2,
+        "evaluation_count": 1,
+        "mandate_count": 2,
+        "project_count": 2
+      }
+    },
+    {
+      "label": "evaluate safe",
+      "hash": "0xc22edaeb147cb9fec5935d87ddcfdb4e5bbca4edd99e79c23383322e6de46f5f",
+      "signer": "0x48CCA889CF67A8420D82341e2fa9532Dc36Ba5c2",
+      "before": {
+        "candidate_count": 2,
+        "evaluation_count": 1,
+        "mandate_count": 2,
+        "project_count": 2
+      },
+      "status": "FINALIZED",
+      "after": {
+        "candidate_count": 2,
+        "evaluation_count": 2,
+        "mandate_count": 2,
+        "project_count": 2
+      }
+    },
+    {
+      "label": "submit hidden-mint",
+      "hash": "0xbe013c6a74c6a3a5d0c58b024a2bdf75e176b8f675175335d8fa03136f46418c",
+      "signer": "0x48CCA889CF67A8420D82341e2fa9532Dc36Ba5c2",
+      "before": {
+        "candidate_count": 2,
+        "evaluation_count": 2,
+        "mandate_count": 2,
+        "project_count": 2
+      },
+      "status": "FINALIZED",
+      "after": {
+        "candidate_count": 3,
+        "evaluation_count": 2,
+        "mandate_count": 2,
+        "project_count": 2
+      }
+    },
+    {
+      "label": "evaluate hidden-mint",
+      "hash": "0x2e6f9f7f735d10040ce56e78910d073705bf10ff52dd2b72516b4f5ff509725a",
+      "signer": "0x48CCA889CF67A8420D82341e2fa9532Dc36Ba5c2",
+      "before": {
+        "candidate_count": 3,
+        "evaluation_count": 2,
+        "mandate_count": 2,
+        "project_count": 2
+      },
+      "status": "FINALIZED",
+      "after": {
+        "candidate_count": 3,
+        "evaluation_count": 2,
+        "mandate_count": 2,
+        "project_count": 2
+      }
+    },
+    {
+      "label": "submit wrong-storage",
+      "hash": "0x706fa5f07414749478535cf0bc0960406da127f8b2aec28018828b08dbf3f1d1",
+      "signer": "0x48CCA889CF67A8420D82341e2fa9532Dc36Ba5c2",
+      "before": {
+        "candidate_count": 3,
+        "evaluation_count": 2,
+        "mandate_count": 2,
+        "project_count": 2
+      },
+      "status": "FINALIZED",
+      "after": {
+        "candidate_count": 4,
+        "evaluation_count": 2,
+        "mandate_count": 2,
+        "project_count": 2
+      }
+    },
+    {
+      "label": "evaluate wrong-storage",
+      "hash": "0x4c069276c6e3e908acbf0bd34ad2d0ffe9e97b789157ec9ac7d41c58343cb5dc",
+      "signer": "0x48CCA889CF67A8420D82341e2fa9532Dc36Ba5c2",
+      "before": {
+        "candidate_count": 4,
+        "evaluation_count": 2,
+        "mandate_count": 2,
+        "project_count": 2
+      },
+      "status": "FINALIZED",
+      "after": {
+        "candidate_count": 4,
+        "evaluation_count": 2,
+        "mandate_count": 2,
+        "project_count": 2
+      }
+    },
+    {
+      "label": "submit bad digest",
+      "hash": "0x197e3bc3aed5c1878757507098f21ab95911105a6dd058a71bd7ead0fca9de80",
+      "signer": "0x48CCA889CF67A8420D82341e2fa9532Dc36Ba5c2",
+      "before": {
+        "candidate_count": 4,
+        "evaluation_count": 2,
+        "mandate_count": 2,
+        "project_count": 2
+      },
+      "status": "FINALIZED",
+      "after": {
+        "candidate_count": 5,
+        "evaluation_count": 2,
+        "mandate_count": 2,
+        "project_count": 2
+      }
+    },
+    {
+      "label": "evaluate bad digest",
+      "hash": "0x7a235cb906136223b8e898706ae666c5b2ca4b55f3eca8a2bda71f2e74d701bc",
+      "signer": "0x48CCA889CF67A8420D82341e2fa9532Dc36Ba5c2",
+      "before": {
+        "candidate_count": 5,
+        "evaluation_count": 2,
+        "mandate_count": 2,
+        "project_count": 2
+      },
+      "status": "FINALIZED",
+      "after": {
+        "candidate_count": 5,
+        "evaluation_count": 2,
+        "mandate_count": 2,
+        "project_count": 2
+      }
+    }
+  ],
+  "checks": [
+    {
+      "name": "v4 identity",
+      "pass": true,
+      "state": {
+        "name": "UpgradeMandateSentinel",
+        "schema": "artifact-bound-upgrade-review-v4",
+        "version": 4
+      }
+    },
+    {
+      "name": "public manifest baseline",
+      "pass": true,
+      "state": {
+        "status": 200
+      }
+    },
+    {
+      "name": "public source baseline",
+      "pass": true,
+      "state": {
+        "status": 200
+      }
+    },
+    {
+      "name": "public manifest safe",
+      "pass": true,
+      "state": {
+        "status": 200
+      }
+    },
+    {
+      "name": "public source safe",
+      "pass": true,
+      "state": {
+        "status": 200
+      }
+    },
+    {
+      "name": "public manifest hidden-mint",
+      "pass": true,
+      "state": {
+        "status": 200
+      }
+    },
+    {
+      "name": "public source hidden-mint",
+      "pass": true,
+      "state": {
+        "status": 200
+      }
+    },
+    {
+      "name": "public manifest wrong-storage",
+      "pass": true,
+      "state": {
+        "status": 200
+      }
+    },
+    {
+      "name": "public source wrong-storage",
+      "pass": true,
+      "state": {
+        "status": 200
+      }
+    },
+    {
+      "name": "safe expected outcome",
+      "pass": true,
+      "state": {
+        "state": {
+          "candidate_id": 1,
+          "candidate_sha256": "13b48f52dab9db95a95659f875191f3acbdc7abbf0416b88db0b4d6f470ee20d",
+          "hard_reason": "NONE",
+          "latest_evaluation": "1",
+          "mandate_id": 1,
+          "manifest": "{\"functions\":[{\"capability\":\"FEE_ROUNDING\",\"selector\":\"0x1b55c7e5\",\"signature\":\"roundFee(uint256)\"},{\"capability\":\"DEPOSIT\",\"selector\":\"0xb6b55f25\",\"signature\":\"deposit(uint256)\"}],\"project_ref\":\"VAULT-2026\",\"schema\":\"upgrade-manifest-v2\",\"source_path\":\"samples/artifacts/Safe.sol\",\"source_sha256\":\"ff4c53b57655cf27799d31249b9b59012cbe15ff6d32c9ce9e5b695dbbf113e7\",\"storage\":[{\"label\":\"balance\",\"slot\":0,\"type\":\"uint256\"}]}",
+          "parent_candidate": "ROOT",
+          "project_id": 1,
+          "publisher": "0x48CCA889CF67A8420D82341e2fa9532Dc36Ba5c2",
+          "source": "{\"commit\":\"4f91e189810e6e5f266152661de25fba00cb26a2\",\"manifest_path\":\"samples/artifacts/safe.json\",\"manifest_sha256\":\"13b48f52dab9db95a95659f875191f3acbdc7abbf0416b88db0b4d6f470ee20d\",\"owner\":\"dearmore5382\",\"repository\":\"UpgradeMandateSentinel\"}",
+          "state": "WITHIN_MANDATE"
+        },
+        "checks": {
+          "baseline": {
+            "manifest": "{\"functions\":[{\"capability\":\"DEPOSIT\",\"selector\":\"0xb6b55f25\",\"signature\":\"deposit(uint256)\"}],\"project_ref\":\"VAULT-2026\",\"schema\":\"upgrade-manifest-v2\",\"source_path\":\"samples/artifacts/Baseline.sol\",\"source_sha256\":\"7ade3248ec58091524f58a5fddc27958feb419972b92fcaaccef5571799befc7\",\"storage\":[{\"label\":\"balance\",\"slot\":0,\"type\":\"uint256\"}]}",
+            "manifest_sha256": "384334b3b901605f8b7ab36b6205216254c25f477d9b5b56688d219d65a45a1d",
+            "source_sha256": "7ade3248ec58091524f58a5fddc27958feb419972b92fcaaccef5571799befc7",
+            "source_text": "pragma solidity ^0.8.24;\ncontract Vault {\n    uint256 internal balance;\n    function deposit(uint256 amount) external { balance += amount; }\n}\n",
+            "status": "MATCH"
+          },
+          "candidate": {
+            "manifest": "{\"functions\":[{\"capability\":\"FEE_ROUNDING\",\"selector\":\"0x1b55c7e5\",\"signature\":\"roundFee(uint256)\"},{\"capability\":\"DEPOSIT\",\"selector\":\"0xb6b55f25\",\"signature\":\"deposit(uint256)\"}],\"project_ref\":\"VAULT-2026\",\"schema\":\"upgrade-manifest-v2\",\"source_path\":\"samples/artifacts/Safe.sol\",\"source_sha256\":\"ff4c53b57655cf27799d31249b9b59012cbe15ff6d32c9ce9e5b695dbbf113e7\",\"storage\":[{\"label\":\"balance\",\"slot\":0,\"type\":\"uint256\"}]}",
+            "manifest_sha256": "13b48f52dab9db95a95659f875191f3acbdc7abbf0416b88db0b4d6f470ee20d",
+            "source_sha256": "ff4c53b57655cf27799d31249b9b59012cbe15ff6d32c9ce9e5b695dbbf113e7",
+            "source_text": "pragma solidity ^0.8.24;\ncontract Vault {\n    uint256 internal balance;\n    function deposit(uint256 amount) external { balance += amount; }\n    function roundFee(uint256 amount) external pure returns (uint256) { return amount / 100; }\n}\n",
+            "status": "MATCH"
+          }
+        }
+      }
+    },
+    {
+      "name": "hidden-mint expected outcome",
+      "pass": true,
+      "state": {
+        "state": {
+          "candidate_id": 2,
+          "candidate_sha256": "dc95bed7fa7b271718afcb75a32e97d93f834ff06251ef00f9870149ea0575b7",
+          "hard_reason": "MISMATCH",
+          "latest_evaluation": "NONE",
+          "mandate_id": 1,
+          "manifest": "PENDING_FETCH",
+          "parent_candidate": "ROOT",
+          "project_id": 1,
+          "publisher": "0x48CCA889CF67A8420D82341e2fa9532Dc36Ba5c2",
+          "source": "{\"commit\":\"4f91e189810e6e5f266152661de25fba00cb26a2\",\"manifest_path\":\"samples/artifacts/hidden-mint.json\",\"manifest_sha256\":\"dc95bed7fa7b271718afcb75a32e97d93f834ff06251ef00f9870149ea0575b7\",\"owner\":\"dearmore5382\",\"repository\":\"UpgradeMandateSentinel\"}",
+          "state": "INTEGRITY_FAILURE"
+        },
+        "checks": {
+          "baseline": {
+            "manifest": "{\"functions\":[{\"capability\":\"DEPOSIT\",\"selector\":\"0xb6b55f25\",\"signature\":\"deposit(uint256)\"}],\"project_ref\":\"VAULT-2026\",\"schema\":\"upgrade-manifest-v2\",\"source_path\":\"samples/artifacts/Baseline.sol\",\"source_sha256\":\"7ade3248ec58091524f58a5fddc27958feb419972b92fcaaccef5571799befc7\",\"storage\":[{\"label\":\"balance\",\"slot\":0,\"type\":\"uint256\"}]}",
+            "manifest_sha256": "384334b3b901605f8b7ab36b6205216254c25f477d9b5b56688d219d65a45a1d",
+            "source_sha256": "7ade3248ec58091524f58a5fddc27958feb419972b92fcaaccef5571799befc7",
+            "source_text": "pragma solidity ^0.8.24;\ncontract Vault {\n    uint256 internal balance;\n    function deposit(uint256 amount) external { balance += amount; }\n}\n",
+            "status": "MATCH"
+          },
+          "candidate": {
+            "manifest": "{\"functions\":[{\"capability\":\"FEE_ROUNDING\",\"selector\":\"0x1b55c7e5\",\"signature\":\"roundFee(uint256)\"},{\"capability\":\"DEPOSIT\",\"selector\":\"0xb6b55f25\",\"signature\":\"deposit(uint256)\"}],\"project_ref\":\"VAULT-2026\",\"schema\":\"upgrade-manifest-v2\",\"source_path\":\"samples/artifacts/HiddenMint.sol\",\"source_sha256\":\"960fba3c4331cf60f5cd6fc407c047a4ea464ab628364833f2484182957d1ebb\",\"storage\":[{\"label\":\"balance\",\"slot\":0,\"type\":\"uint256\"}]}",
+            "manifest_sha256": "dc95bed7fa7b271718afcb75a32e97d93f834ff06251ef00f9870149ea0575b7",
+            "source_sha256": "960fba3c4331cf60f5cd6fc407c047a4ea464ab628364833f2484182957d1ebb",
+            "status": "MISMATCH"
+          }
+        }
+      }
+    },
+    {
+      "name": "wrong-storage expected outcome",
+      "pass": true,
+      "state": {
+        "state": {
+          "candidate_id": 3,
+          "candidate_sha256": "2f253eef13fec141729bf022da463af996c4d61b8662d685445692b07585aa23",
+          "hard_reason": "UNSUPPORTED_SOURCE",
+          "latest_evaluation": "NONE",
+          "mandate_id": 1,
+          "manifest": "PENDING_FETCH",
+          "parent_candidate": "ROOT",
+          "project_id": 1,
+          "publisher": "0x48CCA889CF67A8420D82341e2fa9532Dc36Ba5c2",
+          "source": "{\"commit\":\"4f91e189810e6e5f266152661de25fba00cb26a2\",\"manifest_path\":\"samples/artifacts/wrong-storage.json\",\"manifest_sha256\":\"2f253eef13fec141729bf022da463af996c4d61b8662d685445692b07585aa23\",\"owner\":\"dearmore5382\",\"repository\":\"UpgradeMandateSentinel\"}",
+          "state": "INTEGRITY_FAILURE"
+        },
+        "checks": {
+          "baseline": {
+            "manifest": "{\"functions\":[{\"capability\":\"DEPOSIT\",\"selector\":\"0xb6b55f25\",\"signature\":\"deposit(uint256)\"}],\"project_ref\":\"VAULT-2026\",\"schema\":\"upgrade-manifest-v2\",\"source_path\":\"samples/artifacts/Baseline.sol\",\"source_sha256\":\"7ade3248ec58091524f58a5fddc27958feb419972b92fcaaccef5571799befc7\",\"storage\":[{\"label\":\"balance\",\"slot\":0,\"type\":\"uint256\"}]}",
+            "manifest_sha256": "384334b3b901605f8b7ab36b6205216254c25f477d9b5b56688d219d65a45a1d",
+            "source_sha256": "7ade3248ec58091524f58a5fddc27958feb419972b92fcaaccef5571799befc7",
+            "source_text": "pragma solidity ^0.8.24;\ncontract Vault {\n    uint256 internal balance;\n    function deposit(uint256 amount) external { balance += amount; }\n}\n",
+            "status": "MATCH"
+          },
+          "candidate": {
+            "manifest": "{\"functions\":[{\"capability\":\"FEE_ROUNDING\",\"selector\":\"0x1b55c7e5\",\"signature\":\"roundFee(uint256)\"},{\"capability\":\"DEPOSIT\",\"selector\":\"0xb6b55f25\",\"signature\":\"deposit(uint256)\"}],\"project_ref\":\"VAULT-2026\",\"schema\":\"upgrade-manifest-v2\",\"source_path\":\"samples/artifacts/WrongStorage.sol\",\"source_sha256\":\"3fa7863de54dd753bfd2f5d754742bf2deaaee11190b19f7d98cd1b4f2c90bfc\",\"storage\":[{\"label\":\"balance\",\"slot\":0,\"type\":\"uint256\"}]}",
+            "manifest_sha256": "2f253eef13fec141729bf022da463af996c4d61b8662d685445692b07585aa23",
+            "source_sha256": "3fa7863de54dd753bfd2f5d754742bf2deaaee11190b19f7d98cd1b4f2c90bfc",
+            "status": "UNSUPPORTED_SOURCE"
+          }
+        }
+      }
+    },
+    {
+      "name": "digest failure creates no positive record",
+      "pass": true,
+      "state": {
+        "state": {
+          "candidate_id": 4,
+          "candidate_sha256": "0000000000000000000000000000000000000000000000000000000000000000",
+          "hard_reason": "MANIFEST_DIGEST_MISMATCH",
+          "latest_evaluation": "NONE",
+          "mandate_id": 1,
+          "manifest": "PENDING_FETCH",
+          "parent_candidate": "ROOT",
+          "project_id": 1,
+          "publisher": "0x48CCA889CF67A8420D82341e2fa9532Dc36Ba5c2",
+          "source": "{\"commit\":\"4f91e189810e6e5f266152661de25fba00cb26a2\",\"manifest_path\":\"samples/artifacts/safe.json\",\"manifest_sha256\":\"0000000000000000000000000000000000000000000000000000000000000000\",\"owner\":\"dearmore5382\",\"repository\":\"UpgradeMandateSentinel\"}",
+          "state": "INTEGRITY_FAILURE"
+        },
+        "checks": {
+          "baseline": {
+            "manifest": "{\"functions\":[{\"capability\":\"DEPOSIT\",\"selector\":\"0xb6b55f25\",\"signature\":\"deposit(uint256)\"}],\"project_ref\":\"VAULT-2026\",\"schema\":\"upgrade-manifest-v2\",\"source_path\":\"samples/artifacts/Baseline.sol\",\"source_sha256\":\"7ade3248ec58091524f58a5fddc27958feb419972b92fcaaccef5571799befc7\",\"storage\":[{\"label\":\"balance\",\"slot\":0,\"type\":\"uint256\"}]}",
+            "manifest_sha256": "384334b3b901605f8b7ab36b6205216254c25f477d9b5b56688d219d65a45a1d",
+            "source_sha256": "7ade3248ec58091524f58a5fddc27958feb419972b92fcaaccef5571799befc7",
+            "source_text": "pragma solidity ^0.8.24;\ncontract Vault {\n    uint256 internal balance;\n    function deposit(uint256 amount) external { balance += amount; }\n}\n",
+            "status": "MATCH"
+          },
+          "candidate": {
+            "manifest": "",
+            "manifest_sha256": "13b48f52dab9db95a95659f875191f3acbdc7abbf0416b88db0b4d6f470ee20d",
+            "source_sha256": "",
+            "status": "MANIFEST_DIGEST_MISMATCH"
+          }
+        }
+      }
+    }
+  ],
+  "finished": "2026-10-10T01:50:16.599Z",
+  "final_counts": {
+    "candidate_count": 5,
+    "evaluation_count": 2,
+    "mandate_count": 2,
+    "project_count": 2
+  }
+}

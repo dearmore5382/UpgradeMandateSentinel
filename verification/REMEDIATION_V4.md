@@ -1,6 +1,6 @@
 # Structural source verification correction
 
-Status: v4 replacement source prepared; live verification pending.
+Status: v4 deployed; live SDK happy path and adversarial controls passed. See E2E_V4.md. Production signed UI verification remains pending. The pending-work description below predates the completed live run.
 
 The v3 deployment 0x6B8593e8c62E04B1dd9b71dE5bfB84B54D59170b matched repository source byte-for-byte (SHA-256 afa7ab9c1ade2273c1e04e5ffd2e3cf387fe50433e59cf671352e787f9b198d6). Public fixture preflight passed. Its first evaluate transaction 0x5f2e5cf2e15cf874336c03efff46631ee43e7c48f137f4e58ad78b326821e5d2 returned REVIEW_REQUIRED in leader execution with both correspondence observations UNCLEAR, and NO_MAJORITY was observed during consensus rotations. The polling runner stopped after an RPC returned HTML rather than JSON. This is failed/pending evidence, not a passing happy path. See LIVE_RUN_V3.json for submitted hashes and captured checkpoints.
 

@@ -1,6 +1,6 @@
 # UpgradeMandate Sentinel
 
-Current source is v4. The v3 live attempt did not establish a passing happy path. See verification/REMEDIATION_V4.md for the deterministic structural verification correction and current release blockers.
+Current deployment is v4: `0x2eCb42621DC10023EE0fd1051E7eb119D6bE2B5B`. Live SDK lifecycle passed; signed production UI verification remains pending. See [current E2E evidence](verification/E2E_V4.md) and [steward response](verification/MORE_INFORMATION_SUBMIT_V4.md). Historical v2/v3 deployment/readiness statements below are superseded by this v4 status.
 
 UpgradeMandate Sentinel v3 reviews bounded standalone Solidity upgrade artifacts. An Authority registers a baseline locator at a full GitHub commit and a governance mandate; a designated Builder submits candidate locators. Validators fetch manifests and referenced source bytes, recompute their digests and inspect complete manifest/source correspondence. Only matching artifacts proceed to deterministic storage-prefix checks and source-informed mandate assessment. Imports, inheritance, assembly and delegatecall are unsupported and fail closed.
 
